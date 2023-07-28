@@ -1,6 +1,7 @@
 import CreatePage from "../pages/CreatePage";
 import LinkLayout from "../layout/LinkLayot";
 import MainPage from "../pages/MainPage";
+import DoneTaskPage from "../pages/doneTaskPage";
 
 const routes = [
     {
@@ -14,6 +15,10 @@ const routes = [
             {
                 element: <CreatePage />,
                 path: '/create',
+            },
+            {
+                element: <DoneTaskPage />,
+                path: '/done',
             }
         ]}
 ]

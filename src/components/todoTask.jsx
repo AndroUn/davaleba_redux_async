@@ -4,11 +4,11 @@ const TodoTask = ({id, title, name, deadline, isCompleted, remove, finish}) => {
 
 
     return(
-        <div key={id} className={styles.taskWrapper}>
+        <div key={id} className={styles.taskBox}>
             <div>
                 <p>Task: {title}</p>
                 <p>Name: {name}</p>
-                <p>date: {deadline}</p>
+                <p>Deadline: {deadline}</p>
             </div>
             <div className={styles.buttonWrapper}>
                 <button onClick={()=> remove(id)} className={styles.buttonItem}>x</button>

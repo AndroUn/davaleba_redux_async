@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux"
 import TodoTask from "../components/todoTask"
 import {useEffect} from "react"
 import {deleteTodoTask, finishTodoTask, getTodoTask} from "../store/todo/todo.thunk"
-
+import DoneTasks from "../components/doneTasks"
 
 const MainPage = () => {
     const dispatch = useDispatch()
@@ -17,19 +17,21 @@ const MainPage = () => {
         dispatch(getTodoTask())
     }
 
-    const finishTask = (taskId) => {
-        dispatch(finishTodoTask(taskId))
+    const finishTask = (taskId, isCompleted) => {
+        dispatch(finishTodoTask({taskId, isCompleted}))
+        dispatch(getTodoTask())
     }
 
 
-    if(loading) return <div>Loading . . .</div>
+    if(loading) return <div className="lds-dual-ring"></div>
     if(error) return <div>{error}</div>
 
 
-    const undoneTasks = todoList
+    const undoneTasks = todoList.filter(task => task.isCompleted == false)
+
     return(
         <div>
-            {todoList.map(task => 
+            {undoneTasks.map(task => 
                 <TodoTask key={task._uuid} id={task._uuid} title={task.title} name={task.name} deadline={task.deadline} remove={deleteTask} finish={finishTask}/>
                 )}
         </div>

@@ -1,4 +1,7 @@
 .taskWrapper{
+    display:flex;
+}
+.taskBox{
     width: 300px;
     display: flex;
     justify-content: space-between;
@@ -17,10 +20,10 @@
     margin-bottom: 10px;
     border-radius: 50%;
     border: none;
-    font-size: 17px;
+    font-size: 20px;
     padding: 5px;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
 }
 
@@ -30,6 +33,16 @@
 }
 .links {
     margin: 10px
+}
+
+
+.toDoForm{
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    margin-top: 50px;
+    flex-direction: column;
+    width: 350px;
 }
 
 .formBtn{

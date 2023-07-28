@@ -30,11 +30,14 @@ const TodoForm = () => {
 
 
     return(
-        <form className={styles.toDoForm} onSubmit={onSubmit}> 
-            <input className={styles.fromInput} type="text" value={taskValue} onChange={e => setTaskValue(e.target.value)}/>
-            <input className={styles.fromInput} value={nameValue} onChange={e => setName(e.target.value)}/>
-            <input className={styles.fromInput} value={deadlineValue} onChange={e => setDeadlineValue(e.target.value)}/>
-            <button>submit</button>
+        <form className={styles.toDoForm} onSubmit={onSubmit}>
+            <label>Task</label>
+            <input className={styles.formInput} type="text" value={taskValue} onChange={e => setTaskValue(e.target.value)}/>
+            <label>Name</label>
+            <input className={styles.formInput} type="text" value={nameValue} onChange={e => setName(e.target.value)}/>
+            <label>Deadline</label>
+            <input className={styles.formInput} type="date" value={deadlineValue} onChange={e => setDeadlineValue(e.target.value)}/>
+            <button className={styles.formBtn}>submit</button>
         </form>
     )
 }

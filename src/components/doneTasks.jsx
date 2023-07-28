@@ -1,19 +1,21 @@
 import styles from "../css.modules/style.module.css"
 
-const doneTasks = ({index, title, name, isCompleted, remove}) => {
+const DoneTasks = ({id, title, name, deadline, isCompleted, remove, finish}) => {
 
 
     return(
-        <div key={index} className={styles.taskWrapper}>
+        <div key={id} className={styles.taskBox}>
             <div>
-                <p>{title}</p>
-                <p>{name}</p>
+                <p>Task: {title}</p>
+                <p>Name: {name}</p>
+                <p>Deadline: {deadline}</p>
             </div>
             <div className={styles.buttonWrapper}>
                 <button onClick={()=> remove(title)} className={styles.buttonItem}>x</button>
+                <button onClick={()=> finish(id)} className={styles.buttonItem}>&#9166;</button>
             </div>
         </div>
     )
 }
 
-export default doneTasks
+export default DoneTasks

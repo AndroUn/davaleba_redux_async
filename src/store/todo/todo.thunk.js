@@ -64,16 +64,15 @@ export const finishTodoTask = createAsyncThunk(
     '/tasks/PUT',
     async (payload, ThunkAPI) => {
         try{
-            const res = await fetch(`/api/v1/taskList/${payload}`, {
+            const res = await fetch(`/api/v1/taskList/${payload.taskId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-type': "application/json",
                     'Authorization': `Bearer ${process.env.REACT_APP_API_KEY}`
                 },
-                body: JSON.stringify({payload})
+                body: JSON.stringify({isCompleted: !payload.isCompleted})
             })
             const data = await res.json()
-            if (data) return ThunkAPI.fulfillWithValue(data.isCompleted = true)
         }catch(err){
             return ThunkAPI.rejectWithValue('Something went wrong')
         }
