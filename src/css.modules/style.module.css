@@ -1,0 +1,55 @@
+.taskWrapper{
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    margin: 15px auto;
+    align-items: center;
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+
+.buttonWrapper{
+    display: flex;
+    flex-direction: column;
+}
+.buttonItem{
+    margin-bottom: 10px;
+    border-radius: 50%;
+    border: none;
+    font-size: 17px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.linkWrapper{
+    display: flex;
+    justify-content: center;
+}
+.links {
+    margin: 10px
+}
+
+.formBtn{
+    border: none;
+    margin-top: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .5s all;
+}
+.formBtn:hover{
+    background-color: #00d4ff;
+}
+
+.formInput{
+    border: 1px solid grey;
+    margin-top: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
